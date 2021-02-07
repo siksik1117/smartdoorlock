@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>회원가입</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+  <style>
+      *{
+ margin: 0;
+ padding: 0;
+}
+
+.bgimg{
+ width: 100%;
+ height: 100vh;
+ background-image: linear-gradient(27deg, #00BFFF 50%, #f2f2f2 50%);
+}
+
+.centerdiv{
+ width: 350px;
+ height: 450px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ background-color: red;
+ transform: translate(-50%, -50%);
+ background-image: linear-gradient(27deg, #f2f2f2 50%, #00BFFF 50%);
+ box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+#profilepic{
+ width: 120px;
+ height: 120px;
+ border-radius: 50%;
+ position: relative;
+ top: -60px;
+ left: calc( (350px - 120px) / 2 )
+}
+
+h2{
+ text-align: center;
+ color: white;
+ text-transform: uppercase;
+ font-size: 2em;
+ word-spacing: 10px;
+ margin-top: -50px;
+ margin-bottom: 50px;
+ text-shadow: -2px 2px 1px #0A84C6;
+}
+
+.inputbox{
+ width: calc(100% - 40px);
+ height: 30px;
+ display: block;
+ margin: auto;
+ padding: 0 10px;
+ box-sizing: border-box;
+}
+
+::placeholder{
+ letter-spacing: 2px;
+ color: black;
+}
+
+button{
+ width: calc(100% - 40px);
+ height: 30px;
+ display: block;
+ margin: auto;
+ color: white;
+ background-color: dodgerblue;
+ border: none;
+}
+
+.FORGOT-SECTION{
+ width: calc(100% - 40px);
+ line-height: 30px;
+ display: block;
+ margin: auto;
+ color: white;
+ background-color: dodgerblue;
+ text-transform: uppercase;
+ font-size: 0.8em;
+ text-align: right;
+ box-sizing: border-box;
+
+}
+  </style>
+      <script language='javascript'>
+        function newUser()
+        {
+            if(document.myForm.id.value == '')
+            {
+                alert("ID를 입력하세요!");
+            }
+            else
+            document.myForm.submit();
+        }
+    </script>
+ </head>
+ <body>
+  <div class="bgimg">
+   <div class="centerdiv">
+    <img src="https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/user-128.png" id="profilepic">
+    <h2>회원가입</h2>
+    <form action="/board/join" method="post" name="myForm">
+     <div>
+      <input type="text" id="id" name="id" class="inputbox" placeholder="아이디">
+     </div>
+     <br>
+     <div>
+      <input type="Password" id="password" name="password" class="inputbox" placeholder="비밀번호">
+     </div>
+     <br>
+     <div>
+        <input type="text" id="name" name="name" class="inputbox" placeholder="이름">
+    </div>
+    <br>
+     <div>
+      <button type="submit" id="userAdd" onclick="newUser();">가입</button>
+     </div>
+    </form> <br>
+    <div class="FORGOT-SECTION">
+    <button type="button" onclick="location.href='/'">돌아가기</button>
+    </div>
+   </div>
+  </div>
+  
+ </body>
+</html>

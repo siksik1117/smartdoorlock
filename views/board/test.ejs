@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<script>
+var memberCountConTxt= 296842;
+  
+  $({ val : 0 }).animate({ val : memberCountConTxt }, {
+   duration: 2000,
+  step: function() {
+    var num = numberWithCommas(Math.floor(this.val));
+    $(".memberCountCon").text(num);
+  },
+  complete: function() {
+    var num = numberWithCommas(Math.floor(this.val));
+    $(".memberCountCon").text(num);
+  }
+});
+
+</script>
+</head>
+
+<body>
+  <div class="memberCountCon"></div>
+</body>
+</html>

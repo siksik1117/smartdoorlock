@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>사진확인</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+    <style>
+        table {
+          width: 40%;
+          text-align: center;
+          margin:auto;
+        }
+        table, th, td {
+          border: 2px solid #bcbcbc;
+        }
+        .center{
+            text-align: center;
+        }
+        body{
+    background-color: #f2f2f2;
+
+}
+      </style>
+      
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+    
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <img src="../smartlocklogo1.png" width="100" height="50" onclick="location.href='/board'">
+                    </li>
+                    <li>
+                        <a href="/board/log">출입기록</a>
+                    </li>
+                    <li>
+                        <a id="joinmenu" href="/board/movie">영상</a>
+                    </li>
+                    <li>
+                        <a id="loginmenu" href="/board/temphum">온습도</a>
+                    </li>
+                    <li class="active">
+                        <a id="loginmenu" href="/board/image">사진확인</a>
+                    </li>
+  
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="center"><button type="button" onclick="location.href='image'">다시 입력하기</button></div>
+  <br>
+  <br>
+  <div style="margin-left: 5%;" >
+            <%
+            for(var i=0; i<results.length; i++)
+            {
+                var data = results[i];
+            %>   
+                <img src="../<%=data.path%>" width="350" height="200" style="margin-top: 20px; margin-left: 20px;" onclick="location.href='../uploads/<%=data.filename%>'"/>
+                
+            <%}%>
+            </div>
+      <br>
+      <br>
+    
+        </body>
+
+
+</html>
